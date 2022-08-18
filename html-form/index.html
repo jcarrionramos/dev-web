@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Formulario UDP</title>
+  </head>
+  <body>
+    <h1 class="color-green">Formulario UDP</h1>
+
+    <form class="form" id="form">
+      <div class="form-control">
+        <label class="h1" for="name" id="label-name">Nombre</label>
+        <input type="text" id="input-name" placeholder="Ingresa tu nombre" />
+      </div>
+
+      <div class="form-control">
+        <label for="email" id="label-email">Email</label>
+        <input type="email" id="input-email" placeholder="Ingresa tu email" />
+      </div>
+
+      <div class="form-control">
+        <label for="age" id="label-age">Edad</label>
+        <input type="number" id="input-age" placeholder="Ingresa tu edad" />
+      </div>
+
+      <div class="form-control">
+        <label for="role" id="label-role">Cual es tu profesión</label>
+        <select name="role" id="select-role">
+          <option value="student">Estudiante</option>
+          <option value="graduate">Licenciado</option>
+          <option value="professional">Profesional</option>
+        </select>
+      </div>
+
+
+      <div class="form-control">
+        <label for="lang">Idioma</label>
+        <label for="lang-es">
+          <input type="radio" id="es" name="lang">Español</input>
+        </label>
+        <label for="lang-en">
+          <input type="radio" id="en" name="lang">Ingles</input>
+        </label>
+        <label for="lang-fr">
+          <input type="radio" id="fr" name="lang">Frances</input>
+        </label>
+      </div>
+    </form>
+  </body>
+</html>

@@ -22,3 +22,20 @@ body {
   display: block;
   margin-bottom: 10px;
 }
+
+.form-control .input,
+.form-control select {
+  border: 1px solid #777;
+  border-radius: 2px;
+  padding: 10px;
+  /* Esto es mala práctica no lo hagan :( */
+  width: 90% !important ;
+}
+
+.form-control select {
+  border-color: rebeccapurple;
+  width: 10%;
+}
+
+.send-button {
+}

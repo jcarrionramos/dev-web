@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <div class="bg-light mt-4 p-4">
+        <form action="/user/create" method="post" class="row g-3">
+          <h4>Crear Usuario</h4>
+
+          {{!-- Name --}}
+          <div class="col-12">
+            <label>Nombre</label>
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              placeholder="Ingrese un nombre"
+            />
+          </div>
+
+          {{!-- lastName --}}
+          <div class="col-12">
+            <label>Apellido</label>
+            <input
+              type="text"
+              name="lastName"
+              class="form-control"
+              placeholder="Ingrese un apellido"
+            />
+          </div>
+
+          {{!-- age --}}
+          <div class="col-12">
+            <label>Edad</label>
+            <input
+              type="number"
+              name="age"
+              class="form-control"
+              placeholder="Edad"
+            />
+          </div>
+
+          {{!-- Address --}}
+          <div class="col-12">
+            <label>Dirección</label>
+            <input
+              type="text"
+              name="address"
+              class="form-control"
+              placeholder="Ingrese una dirección"
+            />
+          </div>
+          
+          <div class="col-12">
+            <button href="#" type="submit" class="btn btn-dark float-end">
+              Crear
+            </button>
+          </div>
+        </form>
+        <hr class="mt-4" />
+        <div class="col-12">
+          <p class="text-center mb-0">
+            Have not account yet? <a href="#">Signup</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

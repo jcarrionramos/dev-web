@@ -17,7 +17,7 @@ const DB = [
 ];
 
 router.get("/", (req, res) => {
-  res.send("Estoy en el route User.js")
+  res.render("user")
 })
 
 router.get("/:userId", (req, res) => {
@@ -44,12 +44,14 @@ router.get("/js/:userId", (req, res) => {
     if (current.id === parseInt(req.params.userId)) return true;
   });
 
+
+
   if (object === undefined) {
     res.send(`<h1>Usuario no encontrado</h1>`);
   } else {
-    res.send(
-      `<h1>Es está buscando un usuario: ${object.name} ${object.lastName} </h1>`
-    );
+    res.render("user", {
+      userName: `${object.name} ${object.lastName}`
+    });
   }
 });
 

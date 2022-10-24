@@ -1,5 +1,6 @@
 import express from "express";
-import * as handlebars from "express-handlebars"
+import * as handlebars from "express-handlebars";
+import path from "path";
 
 import userRouter from "./routes/user.js"
 import dashboardRouter from "./routes/dashboard.js"
@@ -14,19 +15,15 @@ app.engine('hbs', handlebars.engine({
   defaultLayout: 'index'
 }))
 
-
 app.use(express.json());
-app.use(express.static('public'))
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, '/public')));
 
 app.use("/user", userRouter);
 app.use("/dashboard", dashboardRouter)
 
 app.get('/', (req, res) => {
-  res.send("<h1>Hello world</h1>");
-});
-
-app.get("/about", (req, res) => {
-  res.send("<h1>About</h1>");
+  res.send("<h1>Server running</h1>");
 });
 
 export { app };

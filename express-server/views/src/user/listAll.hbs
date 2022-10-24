@@ -1,0 +1,13 @@
+<h1>Lista de todos los usuarios</h1>
+
+{{#each users}}
+  <h3>{{this.name}} {{this.lastName}}</h3>
+  <ul>
+    <li>
+      Edad: {{this.age}}
+    </li>
+    <li>
+      Dirección: {{this.address}}
+    </li>
+  </ul> 
+{{/each}}

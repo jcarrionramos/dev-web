@@ -1,9 +1,10 @@
 import express from "express";
 import * as handlebars from "express-handlebars";
+import * as dotenv from 'dotenv'
 import path from "path";
+import cookieParser from 'cookie-parser';
 
-import userRouter from "./routes/user.js"
-import dashboardRouter from "./routes/dashboard.js"
+dotenv.config()
 
 const app = express();
 
@@ -18,12 +19,6 @@ app.engine('hbs', handlebars.engine({
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '/public')));
-
-app.use("/user", userRouter);
-app.use("/dashboard", dashboardRouter)
-
-app.get('/', (req, res) => {
-  res.send("<h1>Server running</h1>");
-});
+app.use(cookieParser());
 
 export { app };

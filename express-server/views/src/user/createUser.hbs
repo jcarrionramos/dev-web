@@ -5,6 +5,17 @@
         <form action="/user/create" method="post" class="row g-3">
           <h4>Crear Usuario</h4>
 
+          {{!-- Email --}}
+          <div class="col-12">
+            <label>Email</label>
+            <input
+              type="text"
+              name="email"
+              class="form-control"
+              placeholder="Ingresa tu email"
+            />
+          </div>
+
           {{!-- Name --}}
           <div class="col-12">
             <label>Nombre</label>
@@ -50,27 +61,15 @@
           </div>
 
           <div class="col-12">
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="rememberMe"
-              />
-              <label class="form-check-label" for="rememberMe">
-                Remember me</label
-              >
-            </div>
-          </div>
-          <div class="col-12">
             <button type="submit" class="btn btn-dark float-end">
-              Login
+              Crear
             </button>
           </div>
         </form>
         <hr class="mt-4" />
         <div class="col-12">
           <p class="text-center mb-0">
-            Have not account yet? <a href="#">Signup</a>
+            Ya tienes cuenta? <a href="/user/login">Iniciar sesión</a>
           </p>
         </div>
       </div>

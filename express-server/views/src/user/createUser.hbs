@@ -5,7 +5,7 @@
         <form action="/user/create" method="post" class="row g-3">
           <h4>Crear Usuario</h4>
 
-          {{!-- Email --}}
+          {{! Email }}
           <div class="col-12">
             <label>Email</label>
             <input
@@ -16,7 +16,18 @@
             />
           </div>
 
-          {{!-- Name --}}
+          {{! Password }}
+          <div class="col-12">
+            <label>Contraseña</label>
+            <input
+              type="password"
+              name="password"
+              class="form-control"
+              placeholder="Ingresa tu contraseña"
+            />
+          </div>
+
+          {{! Name }}
           <div class="col-12">
             <label>Nombre</label>
             <input
@@ -27,7 +38,7 @@
             />
           </div>
 
-          {{!-- lastName --}}
+          {{! lastName }}
           <div class="col-12">
             <label>Apellido</label>
             <input
@@ -38,7 +49,7 @@
             />
           </div>
 
-          {{!-- age --}}
+          {{! age }}
           <div class="col-12">
             <label>Edad</label>
             <input
@@ -49,7 +60,7 @@
             />
           </div>
 
-          {{!-- Address --}}
+          {{! Address }}
           <div class="col-12">
             <label>Dirección</label>
             <input
@@ -69,7 +80,8 @@
         <hr class="mt-4" />
         <div class="col-12">
           <p class="text-center mb-0">
-            Ya tienes cuenta? <a href="/user/login">Iniciar sesión</a>
+            Ya tienes cuenta?
+            <a href="/user/login">Iniciar sesión</a>
           </p>
         </div>
       </div>

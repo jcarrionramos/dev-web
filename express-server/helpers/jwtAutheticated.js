@@ -1,18 +1,15 @@
-import jwt from "jsonwebtoken"
+import jwt from "jsonwebtoken";
 
-const jwtAutheticated = async (req, res, next) => {
-
-  const cookie = req.cookies[process.env.SESSION_COOKIE]
+const jwtAutheticated = (req, res, next) => {
+  const cookie = req.cookies[process.env.SESSION_COOKIE];
 
   if (!cookie) {
-    res.redirect("/user/login")
+    res.redirect("/user/login");
     return;
   }
 
   try {
-    const token = await jwt.verify(cookie, process.env.JWT_SECRET_KEY);
-    req.userId = token.userId;
-    req.isAdmin = token.isAdmin;
+    jwt.verify(cookie, process.env.JWT_SECRET_KEY);
   } catch (error) {
     res.redirect("/user/login");
     return error;
@@ -20,4 +17,4 @@ const jwtAutheticated = async (req, res, next) => {
   next();
 };
 
-export default jwtAutheticated
+export default jwtAutheticated;

@@ -22,13 +22,13 @@ router.get("/find/:userId", (req, res) => {
   });
 });
 
-router.get("/list_all", jwtAutheticated, async (req, res) => {
-  const currentUser = await getCurrentUser(req);
+router.get("/list_all", async (req, res) => {
+  const users = await User.find({}).lean();
 
-  console.log("currentUser", currentUser);
+  console.log(users);
 
   res.render("src/user/listAll", {
-    users: [],
+    users: users,
   });
 });
 
@@ -70,7 +70,17 @@ router.get("/create", (req, res) => {
 router.post("/create", (req, res) => {
   const body = { ...req.body };
 
-  User.create(body);
+  User.create({
+    ...body,
+    ...{
+      socialNetworks: {
+        facebook: body.facebook,
+        instragram: body.instragram,
+        twitter: body.twitter,
+        linkedin: body.linkedin,
+      },
+    },
+  });
 
   res.render("src/user/createUser");
 });

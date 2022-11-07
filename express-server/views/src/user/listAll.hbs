@@ -4,13 +4,23 @@
   <h3>{{this.name}} {{this.lastName}}</h3>
   <ul>
     <li>
-      Email: {{this.email}}
+      Email:
+      {{this.email}}
     </li>
     <li>
-      Edad: {{this.age}}
+      Edad:
+      {{this.age}}
     </li>
     <li>
-      Dirección: {{this.address}}
+      Dirección:
+      {{this.address}}
     </li>
-  </ul> 
+
+    {{#with this.socialNetworks}}
+      {{facebook}}
+      {{twitter}}
+      {{instagram}}
+      {{linkedin}}
+    {{/with}}
+  </ul>
 {{/each}}

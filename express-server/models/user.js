@@ -1,14 +1,23 @@
-// {
-//   id: 1,
-//   email: "javiercarrionramos@gmail.com",
-//   password: "xxx",
-//   name: "Javier",
-//   lastName: "Carrion",
-//   age: 26,
-//   address: "Atahualpa 235",
-// }
-
 import mongoose from "mongoose";
+
+const socialNetworks = mongoose.Schema({
+  facebook: {
+    type: String,
+    required: false,
+  },
+  instagram: {
+    type: String,
+    required: false,
+  },
+  twitter: {
+    type: String,
+    required: false,
+  },
+  linkedin: {
+    type: String,
+    required: false,
+  },
+});
 
 const userSchema = mongoose.Schema({
   email: {
@@ -34,6 +43,10 @@ const userSchema = mongoose.Schema({
   address: {
     type: String,
     required: false,
+  },
+  socialNetworks: {
+    type: socialNetworks,
+    default: null,
   },
 });
 

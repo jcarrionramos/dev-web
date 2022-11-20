@@ -42,7 +42,7 @@ router.post("/login", async (req, res) => {
   const currentUser = await User.findOne({ email: body.email });
 
   if (!currentUser || currentUser.password !== body.password) {
-    res.send("Usuario o contraseña incorrecta");
+    res.json({ success: false, jwt: null });
     return;
   }
 
@@ -60,7 +60,7 @@ router.post("/login", async (req, res) => {
     }
   );
 
-  res.cookie(process.env.SESSION_COOKIE, signedJWT).redirect("list_all");
+  res.json({ success: true, jwt: signedJWT });
 });
 
 router.get("/create", (req, res) => {
